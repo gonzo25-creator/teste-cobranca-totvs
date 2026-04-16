@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,202 +8,49 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #0a0e14;
-      --surface: #111620;
-      --border: #1e2535;
-      --text: #e2e8f0;
-      --muted: #64748b;
-      --accent: #f97316;
-      --accent-dim: rgba(249,115,22,0.12);
-      --green: #22c55e;
-      --green-dim: rgba(34,197,94,0.1);
-      --blue: #3b82f6;
+      --bg: #0a0e14; --surface: #111620; --border: #1e2535;
+      --text: #e2e8f0; --muted: #64748b; --accent: #f97316;
+      --accent-dim: rgba(249,115,22,0.12); --green: #22c55e;
+      --green-dim: rgba(34,197,94,0.1); --blue: #3b82f6;
       --blue-dim: rgba(59,130,246,0.1);
     }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .wrapper {
-      width: 100%;
-      max-width: 520px;
-    }
-
-    /* Header */
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
-    .logo-mark {
-      width: 36px; height: 36px;
-      background: var(--accent);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px;
-    }
-    .header-text h1 {
-      font-size: 15px; font-weight: 600; color: var(--text);
-      letter-spacing: -0.01em;
-    }
-    .header-text p {
-      font-size: 12px; color: var(--muted); margin-top: 1px;
-    }
-
-    /* Card */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-
-    .card-header {
-      padding: 20px 24px 16px;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .card-title {
-      font-size: 13px; font-weight: 500; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.06em;
-    }
-    .badge {
-      font-size: 11px; font-weight: 500;
-      padding: 3px 8px; border-radius: 20px;
-      background: var(--green-dim); color: var(--green);
-      display: flex; align-items: center; gap: 5px;
-    }
-    .badge::before {
-      content: '';
-      width: 5px; height: 5px; border-radius: 50%;
-      background: var(--green);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%,100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    /* Data rows */
-    .data-grid {
-      padding: 20px 24px;
-      display: flex; flex-direction: column; gap: 14px;
-    }
-    .data-row {
-      display: flex; justify-content: space-between; align-items: baseline;
-      gap: 12px;
-    }
-    .data-label {
-      font-size: 12px; color: var(--muted); font-weight: 400;
-      white-space: nowrap; flex-shrink: 0;
-    }
-    .data-value {
-      font-family: 'DM Mono', monospace;
-      font-size: 12px; color: var(--text);
-      text-align: right; word-break: break-word;
-    }
-    .data-value.highlight {
-      color: var(--accent); font-weight: 500;
-    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; }
+    .wrapper { width: 100%; max-width: 520px; }
+    .header { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+    .logo-mark { width: 36px; height: 36px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .header-text h1 { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+    .header-text p { font-size: 12px; color: var(--muted); margin-top: 1px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .card-header { padding: 20px 24px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .card-title { font-size: 13px; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .badge { font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 20px; background: var(--green-dim); color: var(--green); display: flex; align-items: center; gap: 5px; }
+    .badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .data-grid { padding: 20px 24px; display: flex; flex-direction: column; gap: 14px; }
+    .data-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .data-label { font-size: 12px; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+    .data-value { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--text); text-align: right; word-break: break-word; }
+    .data-value.highlight { color: var(--accent); font-weight: 500; }
     .data-value.green { color: var(--green); }
-
-    .divider {
-      height: 1px; background: var(--border);
-      margin: 4px 24px;
-    }
-
-    /* CTA */
-    .cta-area {
-      padding: 20px 24px 24px;
-    }
-    .info-box {
-      background: var(--blue-dim);
-      border: 1px solid rgba(59,130,246,0.2);
-      border-radius: 10px;
-      padding: 12px 14px;
-      font-size: 12px; color: #93c5fd;
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
+    .divider { height: 1px; background: var(--border); margin: 4px 24px; }
+    .cta-area { padding: 20px 24px 24px; }
+    .info-box { background: var(--blue-dim); border: 1px solid rgba(59,130,246,0.2); border-radius: 10px; padding: 12px 14px; font-size: 12px; color: #93c5fd; line-height: 1.5; margin-bottom: 16px; }
     .info-box strong { color: #bfdbfe; }
-
-    .widget-wrap {
-      display: flex; justify-content: center; padding: 8px 0 4px;
-    }
-
-    /* Scenario selector */
-    .scenario-section {
-      margin-top: 24px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px 24px;
-    }
-    .scenario-title {
-      font-size: 11px; font-weight: 600; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.08em;
-      margin-bottom: 12px;
-    }
-    .scenarios {
-      display: flex; flex-direction: column; gap: 8px;
-    }
-    .scenario-btn {
-      display: flex; align-items: center; gap: 10px;
-      padding: 10px 14px;
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      color: var(--text); font-size: 13px;
-      cursor: pointer; text-align: left;
-      transition: all 0.15s;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .scenario-btn:hover {
-      border-color: var(--accent);
-      background: var(--accent-dim);
-    }
-    .scenario-btn.active {
-      border-color: var(--accent);
-      background: var(--accent-dim);
-      color: #fed7aa;
-    }
-    .scenario-num {
-      width: 20px; height: 20px; border-radius: 6px;
-      background: var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 11px; font-weight: 600; color: var(--muted);
-      flex-shrink: 0;
-    }
-    .scenario-btn.active .scenario-num {
-      background: var(--accent); color: #fff;
-    }
-
-    /* Footer */
-    .footer {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 11px; color: var(--muted);
-    }
-
-    elevenlabs-convai {
-      --el-primary-color: #f97316;
-    }
+    .widget-wrap { display: flex; justify-content: center; padding: 8px 0 4px; }
+    .scenario-section { margin-top: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px; }
+    .scenario-title { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+    .scenarios { display: flex; flex-direction: column; gap: 8px; }
+    .scenario-btn { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: transparent; border: 1px solid var(--border); border-radius: 10px; color: var(--text); font-size: 13px; cursor: pointer; text-align: left; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
+    .scenario-btn:hover { border-color: var(--accent); background: var(--accent-dim); }
+    .scenario-btn.active { border-color: var(--accent); background: var(--accent-dim); color: #fed7aa; }
+    .scenario-num { width: 20px; height: 20px; border-radius: 6px; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: var(--muted); flex-shrink: 0; }
+    .scenario-btn.active .scenario-num { background: var(--accent); color: #fff; }
+    .footer { margin-top: 20px; text-align: center; font-size: 11px; color: var(--muted); }
+    elevenlabs-convai { --el-primary-color: #f97316; }
   </style>
 </head>
 <body>
-
 <div class="wrapper">
 
   <div class="header">
@@ -218,20 +66,14 @@
       <span class="card-title">Dados do Cliente (Mock)</span>
       <span class="badge">Agente ativo</span>
     </div>
-
-    <div class="data-grid" id="data-display">
-      <!-- preenchido via JS -->
-    </div>
-
+    <div class="data-grid" id="data-display"></div>
     <div class="divider"></div>
-
     <div class="cta-area">
       <div class="info-box">
-        <strong>Como testar:</strong> clique no botão abaixo para iniciar a conversa com o agente. 
-        Responda como se fosse o cliente — os dados ao lado serão injetados automaticamente.
+        <strong>Como testar:</strong> selecione o cenário abaixo, depois clique no botão para iniciar a conversa.
       </div>
-      <div class="widget-wrap">
-        <elevenlabs-convai agent-id="agent_7701kpbr4dtfexxthbw6wyxtn4k2"></elevenlabs-convai>
+      <div class="widget-wrap" id="widget-wrap">
+        <!-- widget renderizado via JS com dynamic-variables já embutidas -->
       </div>
     </div>
   </div>
@@ -239,167 +81,156 @@
   <div class="scenario-section">
     <div class="scenario-title">Selecionar Cenário</div>
     <div class="scenarios">
-      <button class="scenario-btn" data-scenario="1" onclick="selectScenario(1)">
-        <span class="scenario-num">1</span>
-        Reconhece a dívida e quer parcelar
+      <button class="scenario-btn active" data-scenario="1" onclick="selectScenario(1)">
+        <span class="scenario-num">1</span>Reconhece a dívida e quer parcelar
       </button>
       <button class="scenario-btn" data-scenario="2" onclick="selectScenario(2)">
-        <span class="scenario-num">2</span>
-        Reconhece mas não tem condições de pagar
+        <span class="scenario-num">2</span>Reconhece mas não tem condições de pagar
       </button>
-      <button class="scenario-btn active" data-scenario="3" onclick="selectScenario(3)">
-        <span class="scenario-num">3</span>
-        Não reconhece a transação
+      <button class="scenario-btn" data-scenario="3" onclick="selectScenario(3)">
+        <span class="scenario-num">3</span>Não reconhece a transação
       </button>
       <button class="scenario-btn" data-scenario="4" onclick="selectScenario(4)">
-        <span class="scenario-num">4</span>
-        Não é a empresa correta
+        <span class="scenario-num">4</span>Não é a empresa correta
       </button>
     </div>
   </div>
 
-  <div class="footer">
-    ElevenLabs × TOTVS Techfin &nbsp;·&nbsp; Uso interno — ambiente de testes
-  </div>
+  <div class="footer">ElevenLabs × TOTVS Techfin &nbsp;·&nbsp; Uso interno — ambiente de testes</div>
 
 </div>
 
 <script src="https://elevenlabs.io/convai-widget/index.js" async></script>
-
 <script>
-  const SCENARIOS = {
-    1: {
-      razao_social_ou_nome: "Tech Soluções Ltda",
-      nome_do_contato: "Anderson Souza",
-      nome_do_produto: "TOTVS Techfin",
-      numeros_notas_fiscais: "NF-1042, NF-1043, NF-1044",
-      datas_vencimento: "05/03/2026 e 20/03/2026",
-      valor_total_atraso: "R$ 8.750,00",
-      percentual_desconto: "10",
-      valor_com_desconto: "R$ 7.875,00",
-      valor_com_desconto_maximo: "R$ 7.500,00",
-      numero_parcelas: "3",
-      data_primeira_parcela: "25/04/2026",
-      dia_recorrente: "25",
-      email_cliente: "anderson.souza@techfin.com.br",
-      cnpj_cpf: "12.345.678/0001-99"
-    },
-    2: {
-      razao_social_ou_nome: "Distribuidora Pinheiro ME",
-      nome_do_contato: "Carlos Pinheiro",
-      nome_do_produto: "TOTVS Techfin",
-      numeros_notas_fiscais: "NF-2201, NF-2202",
-      datas_vencimento: "10/02/2026",
-      valor_total_atraso: "R$ 3.200,00",
-      percentual_desconto: "8",
-      valor_com_desconto: "R$ 2.944,00",
-      valor_com_desconto_maximo: "R$ 2.800,00",
-      numero_parcelas: "2",
-      data_primeira_parcela: "30/04/2026",
-      dia_recorrente: "30",
-      email_cliente: "carlos@distribuidorapinheiro.com.br",
-      cnpj_cpf: "98.765.432/0001-11"
-    },
-    3: {
-      razao_social_ou_nome: "Construtora Horizonte Ltda",
-      nome_do_contato: "Márcia Lima",
-      nome_do_produto: "TOTVS Techfin",
-      numeros_notas_fiscais: "NF-3310, NF-3311",
-      datas_vencimento: "15/01/2026 e 28/01/2026",
-      valor_total_atraso: "R$ 12.400,00",
-      percentual_desconto: "12",
-      valor_com_desconto: "R$ 10.912,00",
-      valor_com_desconto_maximo: "R$ 10.540,00",
-      numero_parcelas: "3",
-      data_primeira_parcela: "20/04/2026",
-      dia_recorrente: "20",
-      email_cliente: "marcia.lima@horizonte.com.br",
-      cnpj_cpf: "45.678.901/0001-55"
-    },
-    4: {
-      razao_social_ou_nome: "Agropecuária Cerrado SA",
-      nome_do_contato: "Roberto Campos",
-      nome_do_produto: "TOTVS Techfin",
-      numeros_notas_fiscais: "NF-4405",
-      datas_vencimento: "01/03/2026",
-      valor_total_atraso: "R$ 5.600,00",
-      percentual_desconto: "5",
-      valor_com_desconto: "R$ 5.320,00",
-      valor_com_desconto_maximo: "R$ 5.100,00",
-      numero_parcelas: "2",
-      data_primeira_parcela: "10/05/2026",
-      dia_recorrente: "10",
-      email_cliente: "rcampos@cerrado.com.br",
-      cnpj_cpf: "33.221.100/0001-77"
-    }
-  };
-
-  const LABELS = {
-    razao_social_ou_nome: "Empresa / Cliente",
-    numeros_notas_fiscais: "Notas Fiscais",
-    datas_vencimento: "Vencimentos",
-    valor_total_atraso: "Valor em Atraso",
-    valor_com_desconto: "Proposta à Vista",
-    numero_parcelas: "Parcelas (alçada)",
-    data_primeira_parcela: "1ª Parcela",
-    email_cliente: "E-mail cadastrado",
-    cnpj_cpf: "CNPJ"
-  };
-
-  const HIGHLIGHT_FIELDS = ['valor_total_atraso', 'valor_com_desconto'];
-  const GREEN_FIELDS = ['numero_parcelas'];
-
-  let currentScenario = 3;
-
-  function renderData(scenario) {
-    const data = SCENARIOS[scenario];
-    const display = document.getElementById('data-display');
-    display.innerHTML = '';
-
-    Object.entries(LABELS).forEach(([key, label]) => {
-      const row = document.createElement('div');
-      row.className = 'data-row';
-
-      const labelEl = document.createElement('span');
-      labelEl.className = 'data-label';
-      labelEl.textContent = label;
-
-      const valueEl = document.createElement('span');
-      valueEl.className = 'data-value';
-      if (HIGHLIGHT_FIELDS.includes(key)) valueEl.classList.add('highlight');
-      if (GREEN_FIELDS.includes(key)) valueEl.classList.add('green');
-      valueEl.textContent = data[key];
-
-      row.appendChild(labelEl);
-      row.appendChild(valueEl);
-      display.appendChild(row);
-    });
+const SCENARIOS = {
+  1: {
+    razao_social_ou_nome: "Tech Soluções Ltda",
+    nome_do_contato: "Anderson Souza",
+    nome_do_produto: "TOTVS Techfin",
+    numeros_notas_fiscais: "NF-1042, NF-1043, NF-1044",
+    datas_vencimento: "05/03/2026 e 20/03/2026",
+    valor_total_atraso: "R$ 8.750,00",
+    percentual_desconto: "10",
+    valor_com_desconto: "R$ 7.875,00",
+    valor_com_desconto_maximo: "R$ 7.500,00",
+    numero_parcelas: "3",
+    data_primeira_parcela: "25/04/2026",
+    dia_recorrente: "25",
+    email_cliente: "anderson.souza@techfin.com.br",
+    cnpj_cpf: "12.345.678/0001-99"
+  },
+  2: {
+    razao_social_ou_nome: "Distribuidora Pinheiro ME",
+    nome_do_contato: "Carlos Pinheiro",
+    nome_do_produto: "TOTVS Techfin",
+    numeros_notas_fiscais: "NF-2201, NF-2202",
+    datas_vencimento: "10/02/2026",
+    valor_total_atraso: "R$ 3.200,00",
+    percentual_desconto: "8",
+    valor_com_desconto: "R$ 2.944,00",
+    valor_com_desconto_maximo: "R$ 2.800,00",
+    numero_parcelas: "2",
+    data_primeira_parcela: "30/04/2026",
+    dia_recorrente: "30",
+    email_cliente: "carlos@distribuidorapinheiro.com.br",
+    cnpj_cpf: "98.765.432/0001-11"
+  },
+  3: {
+    razao_social_ou_nome: "Construtora Horizonte Ltda",
+    nome_do_contato: "Márcia Lima",
+    nome_do_produto: "TOTVS Techfin",
+    numeros_notas_fiscais: "NF-3310, NF-3311",
+    datas_vencimento: "15/01/2026 e 28/01/2026",
+    valor_total_atraso: "R$ 12.400,00",
+    percentual_desconto: "12",
+    valor_com_desconto: "R$ 10.912,00",
+    valor_com_desconto_maximo: "R$ 10.540,00",
+    numero_parcelas: "3",
+    data_primeira_parcela: "20/04/2026",
+    dia_recorrente: "20",
+    email_cliente: "marcia.lima@horizonte.com.br",
+    cnpj_cpf: "45.678.901/0001-55"
+  },
+  4: {
+    razao_social_ou_nome: "Agropecuária Cerrado SA",
+    nome_do_contato: "Roberto Campos",
+    nome_do_produto: "TOTVS Techfin",
+    numeros_notas_fiscais: "NF-4405",
+    datas_vencimento: "01/03/2026",
+    valor_total_atraso: "R$ 5.600,00",
+    percentual_desconto: "5",
+    valor_com_desconto: "R$ 5.320,00",
+    valor_com_desconto_maximo: "R$ 5.100,00",
+    numero_parcelas: "2",
+    data_primeira_parcela: "10/05/2026",
+    dia_recorrente: "10",
+    email_cliente: "rcampos@cerrado.com.br",
+    cnpj_cpf: "33.221.100/0001-77"
   }
+};
 
-  function selectScenario(n) {
-    currentScenario = n;
-    document.querySelectorAll('.scenario-btn').forEach(btn => {
-      btn.classList.toggle('active', parseInt(btn.dataset.scenario) === n);
-    });
-    renderData(n);
-  }
+const LABELS = {
+  razao_social_ou_nome: "Empresa / Cliente",
+  numeros_notas_fiscais: "Notas Fiscais",
+  datas_vencimento: "Vencimentos",
+  valor_total_atraso: "Valor em Atraso",
+  valor_com_desconto: "Proposta à Vista",
+  numero_parcelas: "Parcelas (alçada)",
+  data_primeira_parcela: "1ª Parcela",
+  email_cliente: "E-mail cadastrado",
+  cnpj_cpf: "CNPJ"
+};
 
-  // Inject variables on connect
-  window.addEventListener('load', () => {
-    renderData(currentScenario);
+const HIGHLIGHT_FIELDS = ['valor_total_atraso', 'valor_com_desconto'];
+const GREEN_FIELDS = ['numero_parcelas'];
 
-    const widget = document.querySelector('elevenlabs-convai');
-    if (widget) {
-      widget.addEventListener('elevenlabs-convai:connect', (event) => {
-        const vars = SCENARIOS[currentScenario];
-        event.detail.connection.sendMessage({
-          type: "conversation_initiation_client_data",
-          dynamic_variables: vars
-        });
-      });
-    }
+let currentScenario = 1;
+
+function renderData(scenario) {
+  const data = SCENARIOS[scenario];
+  const display = document.getElementById('data-display');
+  display.innerHTML = '';
+  Object.entries(LABELS).forEach(([key, label]) => {
+    const row = document.createElement('div');
+    row.className = 'data-row';
+    const labelEl = document.createElement('span');
+    labelEl.className = 'data-label';
+    labelEl.textContent = label;
+    const valueEl = document.createElement('span');
+    valueEl.className = 'data-value';
+    if (HIGHLIGHT_FIELDS.includes(key)) valueEl.classList.add('highlight');
+    if (GREEN_FIELDS.includes(key)) valueEl.classList.add('green');
+    valueEl.textContent = data[key];
+    row.appendChild(labelEl);
+    row.appendChild(valueEl);
+    display.appendChild(row);
   });
-</script>
+}
 
+function renderWidget(scenario) {
+  const wrap = document.getElementById('widget-wrap');
+  // Remove widget anterior
+  wrap.innerHTML = '';
+  // Cria novo elemento com dynamic-variables embutidas no atributo HTML
+  const vars = JSON.stringify(SCENARIOS[scenario]);
+  const el = document.createElement('elevenlabs-convai');
+  el.setAttribute('agent-id', 'agent_7701kpbr4dtfexxthbw6wyxtn4k2');
+  el.setAttribute('dynamic-variables', vars);
+  wrap.appendChild(el);
+}
+
+function selectScenario(n) {
+  currentScenario = n;
+  document.querySelectorAll('.scenario-btn').forEach(btn => {
+    btn.classList.toggle('active', parseInt(btn.dataset.scenario) === n);
+  });
+  renderData(n);
+  renderWidget(n);
+}
+
+// Init
+renderData(currentScenario);
+renderWidget(currentScenario);
+</script>
 </body>
 </html>
